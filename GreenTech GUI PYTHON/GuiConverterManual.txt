@@ -1,0 +1,10 @@
+1. Open the CMD
+2. Change the Directory to where the .ui file is:
+	cd C:\Users\muriungi\PycharmProjects\GreenTechGUI
+3. Type the below statement to convert
+	pyuic4 -o OutputFile.py InputFile.ui
+
+i.e	pyic4 -o greenTechGui_ui.py greenTechGui.ui
+
+
+YOUR GUI CODE WILL NOW BE CONVERTED INTO A .py FILE

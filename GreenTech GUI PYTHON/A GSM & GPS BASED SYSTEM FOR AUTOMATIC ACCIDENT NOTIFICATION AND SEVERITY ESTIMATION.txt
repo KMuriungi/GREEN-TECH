@@ -1,0 +1,25 @@
+Now a day accidents are occurring frequently and it is very difficult to help them in critical conditions. We need an automatic system to monitor and inform whenever accidents occur while travelling. With the problem of global population aging increasing, lack of medical facility at the location of accident, inadequate accident sense system performance and other related issues have become increasingly prominent.
+With the problem of global population aging increasing, lack of medical hardware at the near of accident place, inadequate accident sense system performance and other related issues have become increasingly prominent. This paper presents the design and implementation of scene of the accident alarm system based with wireless network communications based on ARM, GPS and GSM, Pre-set of treatment centre as the information processing terminal for the location display and warns the alarm for the treatment people near by the accident location.
+This project consists of wireless communication for communication with the accident sense system and the Pre-set of treatment centre. The main part is the Pre-set of treatment unit, which acts as an Information processing unit. Individual vehicle is equipped with a system called as accident sense system, which consists of GSM and GPS. When the accident occurred, Vehicles state and locations will be transmitted to the Pre-set of treatment centre though wireless communication technologies of GSM through short message format.
+
+
+A GSM & GPS BASED SYSTEM FOR AUTOMATIC ACCIDENT NOTIFICATION AND SEVERITY ESTIMATION,
+Intelligent Automatic Vehicle Accident Detection System Using Wireless Communication,
+Automatic Vehicle Accident Detection and Messaging System Using GSM and GPS Modem,
+DEVELOPMENT OF AUTOMATIC GEOFENCING AND ACCIDENTAL MONITORING SYSTEM BASED ON GPS TECHNOLOGY,
+Vehicle Accident Automatic Detection and Remote Alarm Device,
+Automatic Vehicle Accident Detection System Based on ARM & GPS,
+Vehicle Accident Detection and Reporting System Using GPS and GSM,
+ARM 7 Based Accident Alert and Vehicle Tracking System,
+Accident Notification System by using Two Modems GSM and GPS,
+Intelligent accident identification system using GPS, GSM modem,
+Monitoring and Detecting Vehicle Based On Accelerometer and MEMS Using GSM and GPS Technologies,
+IMPROVING SAFETY WITH OBSTACLE DETECTION AND TRACK FOLLOWING CAR USING SENSOR, GPS AND GSM,
+Automatic Accident Alert and Safety System using Embedded GSM Interface,
+Automatic Vehicle Accident Detection And Messaging System Using GPS and GSM Modems,
+Intelligent Vehicle Control Using Wireless Embedded System in Transportation System Based On GSM and GPS Technology,
+Wireless Accident Information System Using GSM and GPS,
+Vehicle Collision Recognition and Monitoring System Based on AVR Platform,
+
+    Category
+        People & Blogs 
