@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Python with Arduino LESSON 4: Expanding your Virtual World | Technology Tutorials</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.toptechboy.com/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://www.toptechboy.com/wp-content/themes/twentyfourteen/js/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+          .no-break br {
+            display: none !important;
+          }
+      </style><link rel="alternate" type="application/rss+xml" title="Technology Tutorials » Feed" href="http://www.toptechboy.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Technology Tutorials » Comments Feed" href="http://www.toptechboy.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Technology Tutorials » Python with Arduino LESSON 4: Expanding your Virtual World Comments Feed" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/feed/">
+		<script async="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cbgapi.loaded_1"></script><script async="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cbgapi.loaded_0"></script><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/sdk.js" id="facebook-jssdk"></script><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/ca-pub-0597607016984461.js" type="text/javascript" async=""></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.toptechboy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/wp-emoji-release.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="crayon-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/crayon.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-arduino-ide-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/arduino-ide.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfourteen-lato-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentyfourteen-style-css" href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='http://www.toptechboy.com/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/jquery.js"></script>
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.7.1","is_admin":"0","ajaxurl":"http:\/\/www.toptechboy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/crayon.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.toptechboy.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.toptechboy.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Python with Ardiuno LESSON 3: Simple Virtual World Using Ultrasonic Sensor" href="http://www.toptechboy.com/arduino/python-with-ardiuno-3-example-using-ultrasonic-sensor/">
+<link rel="next" title="Python with Arduino LESSON 5: Finishing our Virtual Reality Example" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-5-finishing-our-virtual-reality-example/">
+<meta name="generator" content="WordPress 4.3.1">
+<link rel="canonical" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/">
+<link rel="shortlink" href="http://www.toptechboy.com/?p=289">
+		<script type="text/javascript">
+            var _statcounter = _statcounter || [];
+            _statcounter.push({"tags": {"author": "admin"}});
+        </script>
+	   <script charset="utf-8" type="text/javascript">var switchTo5x=true;</script>
+<script charset="utf-8" type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/buttons.js"></script>
+<script charset="utf-8" type="text/javascript">stLight.options({"publisher":"098f8a39-bf53-4f2d-8601-eca4c8a1b0f4","doNotCopy":false,"hashAddressBar":false,"doNotHash":false});var st_type="wordpress3.9.1";</script>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5e5e5; }
+</style>
+<meta data-pso-pv="1.2.0" data-pso-pt="singlePost" data-pso-th="4aa87a817a48369d25c56cf4dd57bfc3"><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/getAllAppDefault.esi" type="text/javascript"></script><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/checkOAuth.esi" type="text/javascript"></script><link href="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/buttons.css" type="text/css" rel="stylesheet"><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/getCount2.php" type="text/javascript"></script><script gapi_processed="true" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/plusone.js" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="single single-post postid-289 single-format-standard custom-background header-image singular masthead-fixed">
+<div id="page" class="hfeed site">
+		<div id="site-header">
+		<a href="http://www.toptechboy.com/" rel="home">
+			<img src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cropped-earth-from-space1.jpg" alt="Technology Tutorials" height="352" width="1260">
+		</a>
+	</div>
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://www.toptechboy.com/" rel="home">Technology Tutorials</a></h1>
+
+			
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div class="menu-python-with-arduino-container"><ul id="primary-menu" class="nav-menu"><li id="menu-item-543" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-543"><a href="http://www.toptechboy.com/about/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-572"><a href="http://www.toptechboy.com/about/privacy-policy/">Privacy Policy</a></li>
+	<li id="menu-item-626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-626"><a href="http://www.toptechboy.com/about/terms-of-use/">Terms of Use</a></li>
+</ul>
+</li>
+<li id="menu-item-542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-542"><a href="http://www.toptechboy.com/arduino-lessons/">Arduino Lessons</a></li>
+<li id="menu-item-541" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-541"><a href="http://www.toptechboy.com/using-python-with-arduino-lessons/">Using Python with Arduino</a></li>
+<li id="menu-item-719" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-719"><a href="http://www.toptechboy.com/beaglebone-black/">Beaglebone Black</a></li>
+<li id="menu-item-540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-540"><a href="http://www.toptechboy.com/raspberry-pi-with-linux-lessons/">Raspberry Pi with Linux LESSONS</a></li>
+</ul></div>			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<form role="search" method="get" class="search-form" action="http://www.toptechboy.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input class="search-field" placeholder="Search …" name="s" title="Search for:" type="search">
+				</label>
+				<input class="search-submit" value="Search" type="submit">
+			</form>			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+			
+<article id="post-289" class="post-289 post type-post status-publish format-standard hentry category-arduino category-arduino-with-python category-tutorial tag-arduino tag-color-sensor tag-echolocation tag-hc-sr04 tag-high-school-science tag-lessons tag-python tag-serial-port tag-stem tag-tcs230 tag-ultrasonic-sensor">
+	
+	<header class="entry-header">
+				<div class="entry-meta">
+			<span class="cat-links"><a href="http://www.toptechboy.com/category/arduino/" rel="category tag">Arduino</a>, <a href="http://www.toptechboy.com/category/arduino-with-python/" rel="category tag">Arduino with Python</a>, <a href="http://www.toptechboy.com/category/tutorial/" rel="category tag">Tutorial</a></span>
+		</div>
+		<h1 class="entry-title">Python with Arduino LESSON 4: Expanding your Virtual World</h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/" rel="bookmark"><time class="entry-date" datetime="2014-07-22T14:33:15+00:00">July 22, 2014</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.toptechboy.com/author/admin/" rel="author">admin</a></span></span>			<span class="comments-link"><a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/#comments">3 Comments</a></span>
+					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p><iframe src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/rE84gJUZGO8.htm" allowfullscreen="allowfullscreen" frameborder="0" height="315" width="560"></iframe></p>
+<p style="text-align: justify;">In this lesson we will expand the virtual world we created in <a title="Python with Ardiuno LESSON 3: Simple Virtual World Using Ultrasonic Sensor" href="http://www.toptechboy.com/arduino/python-with-ardiuno-3-example-using-ultrasonic-sensor/">Python with Arduino LESSON 3.</a>&nbsp;We
+ will be creating a virtual world that will track a simple scene in the 
+real world. In this project, the virtual world will track both the 
+position and the color of a target in the real world. This lesson 
+requires that you have the Python software and libraries installed, 
+which we explained in <a title="Python with Arduino LESSON 2: Installing the Software" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-2-installing-the-software/">LESSON 2</a>.</p>
+<figure id="attachment_290" style="width: 2500px;" class="wp-caption aligncenter"><a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/attachment/arduino-color-sensor-2/" rel="attachment wp-att-290"><img class="size-full wp-image-290" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/arduino-color-sensor1.jpg" alt="Arduino Circuit" height="1875" width="2500"></a><figcaption class="wp-caption-text">This is our circuit with the HC-SR04 ultrasonic sensor and the TCS230 Color Sensor</figcaption></figure>
+<p style="text-align: justify;">This Lesson will be a bit more involved,
+ and I will take you through it step-by-step. I will need to break 
+things into two parts. In today’s lesson we will cover the Arduino side.
+ We will develop the software that will measure distance and color, and 
+then send those numbers over the serial port. Then in tomorrows lesson, 
+we will develop the Python software to create a really cool virtual 
+graphic to display the data in a virtual world.</p>
+<p style="text-align: justify;">For this project you will need the&nbsp;<a href="http://www.amazon.com/gp/product/B0066X9V5K?ie=UTF8&amp;camp=1789&amp;creativeASIN=B0066X9V5K&amp;linkCode=xm2&amp;tag=sonofthesouth-20">HC-SR04 ultrasonic sensor</a>, the <a title="Color Sensor" href="http://www.amazon.com/gp/product/B00AH5VN72?ie=UTF8&amp;camp=1789&amp;creativeASIN=B00AH5VN72&amp;linkCode=xm2&amp;tag=sonofthesouth-20">TCS230 Color Sensor</a>, the <a href="http://www.amazon.com/gp/product/B006H06TVG?ie=UTF8&amp;camp=1789&amp;creativeASIN=B006H06TVG&amp;linkCode=xm2&amp;tag=sonofthesouth-20">Arduino Microcontroller</a>, and <a href="http://www.amazon.com/gp/product/B00ALQI12M/ref=as_li_tl?ie=UTF8&amp;camp=211189&amp;creative=373489&amp;creativeASIN=B00ALQI12M&amp;link_code=as3&amp;tag=sonofthesouth-20">some male/female jumper wires</a> to connect to the color sensor.</p>
+<p style="text-align: justify;">The Ultrasonic Sensor can be attached per the schematic below:</p>
+<figure id="attachment_223" style="width: 1860px;" class="wp-caption aligncenter"><a href="http://www.toptechboy.com/arduino/lesson-17-measuring-the-speed-of-sound-with-arduino-and-ultrasonic-sensor/attachment/ultrasonic_bb/" rel="attachment wp-att-223"><img class="size-full wp-image-223" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/ultrasonic_bb.jpg" alt="Ultrasonic Sensor Circuit" height="1362" width="1860"></a><figcaption class="wp-caption-text">Simple Circuit for Measuring Distance</figcaption></figure>
+<p style="text-align: justify;">Detailed tutorial on using this sensor was described in <a title="LESSON 18: Distance Meter Using Ultrasonic Sensor and Arduino" href="http://www.toptechboy.com/arduino/lesson-18-distance-meter-using-ultrasonic-sensor-and-arduino/">Arduino LESSON 18</a>,
+ so we will not go through all the details of using the sensor here. 
+Review that lesson if you need more help. Key point here is to connect 
+it as seen in diagram above.</p>
+<p>You will also need to connect up the Color Sensor.</p>
+<table style="height: 68px;" width="576">
+<tbody>
+<tr>
+<td style="text-align: center;" colspan="2">
+<h4>Connecting the Color Sensor to the Arduino</h4>
+</td>
+</tr>
+<tr>
+<td>
+<h6 style="text-align: left;">Color Sensor Pin</h6>
+</td>
+<td>
+<h6 style="text-align: left;">Arduino Pin</h6>
+</td>
+</tr>
+<tr>
+<td><strong>S0</strong></td>
+<td><strong>GND</strong></td>
+</tr>
+<tr>
+<td><strong>S1</strong></td>
+<td><strong>5V</strong></td>
+</tr>
+<tr>
+<td><strong>S2</strong></td>
+<td><strong>pin 7</strong></td>
+</tr>
+<tr>
+<td><strong>S3</strong></td>
+<td><strong>pin 8</strong></td>
+</tr>
+<tr>
+<td><strong>OUT</strong></td>
+<td><strong>pin 4</strong></td>
+</tr>
+<tr>
+<td><strong>VCC</strong></td>
+<td><strong>5V</strong></td>
+</tr>
+<tr>
+<td><strong>GND</strong></td>
+<td><strong>GND</strong></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Use of the color sensor was described in detail in <a title="LESSON 15: Super Cool Arduino Color Sensor Project" href="http://www.toptechboy.com/arduino/lesson-15-super-cool-arduino-color-sensor-project/">Arduino LESSON 15</a>.
+ &nbsp;You should be able to develop to write the software yourself 
+based on earlier lessons to make measurements from both the Color 
+Sensor, and Ultrasonic Sensor, but if you get stuck, you can glance at 
+my code below. Again, it is important for you to write your own code and
+ not copy and paste mine. Mine is just a reference if you get stuck.</p>
+<p></p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-56280438210a0109608464" class="crayon-syntax crayon-theme-arduino-ide crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always expand" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 22px ! important; height: auto; top: auto; left: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Arduino</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 22px ! important; z-index: 0; opacity: 0; height: 3212px;">int
+ S2= 7; //Color sensore pin S2 to Arduino pin 7
+int S3= 8; //Color sensor pin S3 to Arduino pin 8
+int outPin = 4; //Color Sensor OUT to Arduino pin 4
+
+int trigPin=13; //Ultrasonic Sensor Trig pin connected to Arduino pin 13
+int echoPin=11;  //Ultrasonic Sensor Echo pin connected to Arduino pin 
+11
+
+int rColorStrength; //measured strength of red color
+int gColorStrength; //measured strength of green color
+int bColorStrength; //measured strength of blue color
+unsigned int pulseWidth; //for measuring color strength using pulseIn 
+command
+
+float pingTime;  //time for ping to travel from sensor to target and 
+return
+float targetDistance; //Distance to Target in inches
+float speedOfSound=776.5; //Speed of sound in miles per hour when temp 
+is 77 degrees.
+
+
+void setup() {
+  // put your setup code here, to run once:
+  
+  Serial.begin(115200); //turn on serial port
+  
+  pinMode(S2, OUTPUT); //S2 and S3 are outputs and used to tell
+  pinMode(S3, OUTPUT); //arduino which color to measure
+  pinMode(outPin, INPUT); //This is the pin we read the color from
+  
+  pinMode(trigPin, OUTPUT); //Ultrasonic Trig Pin is an output
+  pinMode(echoPin, INPUT);  //Ultradoinic Echo Pin is an input
+  
+
+}
+
+void loop() {
+  
+  //Lets start by reading Red Component of the Color
+  // S2 and S3 should be set LOW
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, LOW);
+  
+  pulseWidth =  pulseIn(outPin, LOW); //Measure raw pulsewidth coming 
+from color sensor outpin
+  
+  rColorStrength = pulseWidth/400. -1; //normalize number to number 
+between 0 and 255
+  
+  rColorStrength = (255- rColorStrength); //reverse so that large number
+ means strong color
+  
+  
+  //Lets read Green Component of the Color
+  // S2 and S3 should be set HIGH
+  digitalWrite(S2, HIGH);
+  digitalWrite(S3, HIGH);
+  
+  pulseWidth =  pulseIn(outPin, LOW); //Measure raw pulsewidth coming 
+from color sensor outpin
+  
+  gColorStrength = pulseWidth/400. -1; //normalize number to number 
+between 0 and 255
+  
+  gColorStrength = (255- gColorStrength); //reverse so that large number
+ means strong color
+  
+  gColorStrength=gColorStrength + 2;
+  
+  //Lets read Blue Component of the Color
+  // S2 and S3 should be set LOW and HIGH Respectively
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, HIGH);
+  
+  pulseWidth =  pulseIn(outPin, LOW); //Measure raw pulsewidth coming 
+from color sensor outpin
+  
+  bColorStrength = pulseWidth/400. -1; //normalize number to number 
+between 0 and 255
+  
+  bColorStrength = (255- bColorStrength); //reverse so that large number
+ means strong color
+  
+  //Now we need to exagerate the colors because readings from color 
+sensor 
+  //are all too close together. Algorithm that appears to work is to
+  //take the strongest color and set to 255, take the weakest color
+  //and set to zero, and then take the middle color and reduce its
+  //value by 2. That is what this next segment of code does.
+
+ if(rColorStrength&gt;gColorStrength &amp;&amp; 
+gColorStrength&gt;bColorStrength) {
+   
+   rColorStrength = 255;
+   gColorStrength = gColorStrength/2;
+   bColorStrength = 0;
+ }
+ 
+  if(rColorStrength&gt;bColorStrength &amp;&amp; 
+bColorStrength&gt;gColorStrength) {
+   
+   rColorStrength = 255;
+   bColorStrength = bColorStrength/2;
+   gColorStrength = 0;
+ }
+ 
+  if(gColorStrength&gt;rColorStrength &amp;&amp; 
+rColorStrength&gt;bColorStrength) {
+   
+   gColorStrength = 255;
+   rColorStrength = rColorStrength/2;
+   bColorStrength = 0;
+ }
+ 
+   if(gColorStrength&gt;bColorStrength &amp;&amp; 
+bColorStrength&gt;rColorStrength) {
+   
+   gColorStrength = 255;
+   bColorStrength = bColorStrength/2;
+   rColorStrength = 0;
+ }
+ 
+   if(bColorStrength&gt;rColorStrength &amp;&amp; 
+rColorStrength&gt;gColorStrength) {
+   
+   bColorStrength = 255;
+   rColorStrength = rColorStrength/2;
+   gColorStrength = 0;
+ }
+ 
+    if(bColorStrength&gt;gColorStrength &amp;&amp; 
+gColorStrength&gt;rColorStrength) {
+   
+   bColorStrength = 255;
+   gColorStrength = gColorStrength/2;
+   rColorStrength = 0;
+ }
+ 
+
+//Now lets measure distance to target from the ultrasonic sensor
+  digitalWrite(trigPin, LOW); //Set trigger pin low
+  delayMicroseconds(2000); //Let signal settle
+  digitalWrite(trigPin, HIGH); //Set trigPin high
+  delayMicroseconds(15); //Delay in high state
+  digitalWrite(trigPin, LOW); //ping has now been sent
+  delayMicroseconds(10); //Delay in low state
+  pingTime = pulseIn(echoPin, HIGH);  //pingTime is presented in 
+microceconds
+  pingTime=pingTime/1000000; //convert pingTime to seconds by dividing 
+by 1000000 (microseconds in a second)
+  pingTime=pingTime/3600; //convert pingtime to hours by dividing by 
+3600 (seconds in an hour)
+  targetDistance= speedOfSound * pingTime;  //This will be in miles, 
+since speed of sound was miles per hour
+  targetDistance=targetDistance/2; //Remember ping travels to target and
+ back from target, so you must divide by 2 for actual target distance.
+  targetDistance= targetDistance*63360;    //Convert miles to inches by 
+multipling by 63360 (inches per mile)
+ 
+ //Now lets print our data to the serial monitor all on one line divided
+ by commas.
+ 
+  Serial.print(rColorStrength);
+  Serial.print(" , ");
+  Serial.print(gColorStrength);
+  Serial.print(" , ");
+  Serial.print(bColorStrength);
+  Serial.print(" , ");
+  Serial.println(targetDistance);
+  
+  delay(150);
+  
+}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1;">
+				<table style="margin-left: -33px;" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 22px !important;"><div class="crayon-num" data-line="crayon-56280438210a0109608464-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-2">2</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-4">4</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-6">6</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-8">8</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-10">10</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-12">12</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-14">14</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-16">16</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-18">18</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-20">20</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-22">22</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-24">24</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-26">26</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-28">28</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-30">30</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-32">32</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-34">34</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-36">36</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-38">38</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-40">40</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-42">42</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-44">44</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-46">46</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-48">48</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-50">50</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-52">52</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-53">53</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-54">54</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-55">55</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-56">56</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-57">57</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-58">58</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-59">59</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-60">60</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-61">61</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-62">62</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-63">63</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-64">64</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-65">65</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-66">66</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-67">67</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-68">68</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-69">69</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-70">70</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-71">71</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-72">72</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-73">73</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-74">74</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-75">75</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-76">76</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-77">77</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-78">78</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-79">79</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-80">80</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-81">81</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-82">82</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-83">83</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-84">84</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-85">85</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-86">86</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-87">87</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-88">88</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-89">89</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-90">90</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-91">91</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-92">92</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-93">93</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-94">94</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-95">95</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-96">96</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-97">97</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-98">98</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-99">99</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-100">100</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-101">101</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-102">102</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-103">103</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-104">104</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-105">105</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-106">106</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-107">107</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-108">108</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-109">109</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-110">110</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-111">111</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-112">112</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-113">113</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-114">114</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-115">115</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-116">116</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-117">117</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-118">118</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-119">119</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-120">120</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-121">121</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-122">122</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-123">123</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-124">124</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-125">125</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-126">126</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-127">127</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-128">128</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-129">129</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-130">130</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-131">131</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-132">132</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-133">133</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-134">134</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-135">135</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-136">136</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-137">137</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-138">138</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-139">139</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-140">140</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-141">141</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-142">142</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-143">143</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-144">144</div><div class="crayon-num" data-line="crayon-56280438210a0109608464-145">145</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210a0109608464-146">146</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 22px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56280438210a0109608464-1"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">S2</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">7</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Color sensore pin S2 to Arduino pin 7</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-2"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">S3</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">8</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Color sensor pin S3 to Arduino pin 8</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-3"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">outPin</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Color Sensor OUT to Arduino pin 4</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-4">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-5"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">trigPin</span><span class="crayon-o">=</span><span class="crayon-cn">13</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Ultrasonic Sensor Trig pin connected to Arduino pin 13</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-6"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">echoPin</span><span class="crayon-o">=</span><span class="crayon-cn">11</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Ultrasonic Sensor Echo pin connected to Arduino pin 11</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-8"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//measured strength of red color</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-9"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//measured strength of green color</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-10"><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//measured strength of blue color</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-11"><span class="crayon-t">unsigned</span><span class="crayon-h"> </span><span class="crayon-r">int</span><span class="crayon-h"> </span><span class="crayon-v">pulseWidth</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//for measuring color strength using pulseIn command</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-12">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-13"><span class="crayon-r">float</span><span class="crayon-h"> </span><span class="crayon-v">pingTime</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//time for ping to travel from sensor to target and return</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-14"><span class="crayon-r">float</span><span class="crayon-h"> </span><span class="crayon-v">targetDistance</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Distance to Target in inches</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-15"><span class="crayon-r">float</span><span class="crayon-h"> </span><span class="crayon-v">speedOfSound</span><span class="crayon-o">=</span><span class="crayon-cn">776.5</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Speed of sound in miles per hour when temp is 77 degrees.</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-16">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-17">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-18"><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-st">setup</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// put your setup code here, to run once:</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-20"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-v">begin</span><span class="crayon-sy">(</span><span class="crayon-cn">115200</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//turn on serial port</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-22"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-23"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">pinMode</span><span class="crayon-sy">(</span><span class="crayon-v">S2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">OUTPUT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//S2 and S3 are outputs and used to tell</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-24"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">pinMode</span><span class="crayon-sy">(</span><span class="crayon-v">S3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">OUTPUT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//arduino which color to measure</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-25"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">pinMode</span><span class="crayon-sy">(</span><span class="crayon-v">outPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">INPUT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//This is the pin we read the color from</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-26"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-27"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">pinMode</span><span class="crayon-sy">(</span><span class="crayon-v">trigPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">OUTPUT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Ultrasonic Trig Pin is an output</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-28"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">pinMode</span><span class="crayon-sy">(</span><span class="crayon-v">echoPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">INPUT</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Ultradoinic Echo Pin is an input</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-29"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-30">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-31"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-32">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-33"><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-st">loop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-34"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-35"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Lets start by reading Red Component of the Color</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-36"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// S2 and S3 should be set LOW</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-37"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-38"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-39"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-40"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pulseWidth</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">pulseIn</span><span class="crayon-sy">(</span><span class="crayon-v">outPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Measure raw pulsewidth coming from color sensor outpin</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-41"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-42"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">pulseWidth</span><span class="crayon-o">/</span><span class="crayon-cn">400.</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//normalize number to number between 0 and 255</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-43"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-44"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//reverse so that large number means strong color</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-45"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-46"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-47"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Lets read Green Component of the Color</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-48"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// S2 and S3 should be set HIGH</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-49"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">HIGH</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-50"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">HIGH</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-51"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-52"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pulseWidth</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">pulseIn</span><span class="crayon-sy">(</span><span class="crayon-v">outPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Measure raw pulsewidth coming from color sensor outpin</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-53"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-54"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">pulseWidth</span><span class="crayon-o">/</span><span class="crayon-cn">400.</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//normalize number to number between 0 and 255</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-55"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-56"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//reverse so that large number means strong color</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-57"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-58"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">gColorStrength</span><span class="crayon-o">=</span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-59"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-60"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Lets read Blue Component of the Color</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-61"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// S2 and S3 should be set LOW and HIGH Respectively</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-62"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-63"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">S3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">HIGH</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-64"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-65"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pulseWidth</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">pulseIn</span><span class="crayon-sy">(</span><span class="crayon-v">outPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Measure raw pulsewidth coming from color sensor outpin</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-66"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-67"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">pulseWidth</span><span class="crayon-o">/</span><span class="crayon-cn">400.</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//normalize number to number between 0 and 255</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-68"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-69"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//reverse so that large number means strong color</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-70"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-71"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//Now we need to exagerate the colors because readings from color sensor </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-72"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//are all too close together. Algorithm that appears to work is to</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-73"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//take the strongest color and set to 255, take the weakest color</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-74"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//and set to zero, and then take the middle color and reduce its</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-75"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//value by 2. That is what this next segment of code does.</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-76">&nbsp;</div><div class="crayon-line" id="crayon-56280438210a0109608464-77"><span class="crayon-h"> </span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">rColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-78"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-79"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-80"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-81"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-82"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-83"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-84"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">rColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-85"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-86"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-87"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-88"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-89"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-90"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-91"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">gColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-92"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-93"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-94"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-95"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-96"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-97"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-98"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">gColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-99"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-100"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-101"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">bColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-102"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-103"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-104"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-105"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">bColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-106"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-107"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-108"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">rColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-109"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-110"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-111"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-112"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">bColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-o">&gt;</span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-113"><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-114"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">bColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-115"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">gColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">gColorStrength</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-116"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">rColorStrength</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-117"><span class="crayon-h"> </span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-118"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-56280438210a0109608464-119">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-120"><span class="crayon-c">//Now lets measure distance to target from the ultrasonic sensor</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-121"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">trigPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Set trigger pin low</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-122"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">delayMicroseconds</span><span class="crayon-sy">(</span><span class="crayon-cn">2000</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Let signal settle</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-123"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">trigPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">HIGH</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Set trigPin high</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-124"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">delayMicroseconds</span><span class="crayon-sy">(</span><span class="crayon-cn">15</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Delay in high state</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-125"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">digitalWrite</span><span class="crayon-sy">(</span><span class="crayon-v">trigPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">LOW</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//ping has now been sent</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-126"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">delayMicroseconds</span><span class="crayon-sy">(</span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Delay in low state</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-127"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pingTime</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">pulseIn</span><span class="crayon-sy">(</span><span class="crayon-v">echoPin</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k">HIGH</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//pingTime is presented in microceconds</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-128"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pingTime</span><span class="crayon-o">=</span><span class="crayon-v">pingTime</span><span class="crayon-o">/</span><span class="crayon-cn">1000000</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//convert pingTime to seconds by dividing by 1000000 (microseconds in a second)</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-129"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">pingTime</span><span class="crayon-o">=</span><span class="crayon-v">pingTime</span><span class="crayon-o">/</span><span class="crayon-cn">3600</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//convert pingtime to hours by dividing by 3600 (seconds in an hour)</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-130"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">targetDistance</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">speedOfSound</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-v">pingTime</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//This will be in miles, since speed of sound was miles per hour</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-131"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">targetDistance</span><span class="crayon-o">=</span><span class="crayon-v">targetDistance</span><span class="crayon-o">/</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//Remember ping travels to target and back from target, so you must divide by 2 for actual target distance.</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-132"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">targetDistance</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">targetDistance</span><span class="crayon-o">*</span><span class="crayon-cn">63360</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//Convert miles to inches by multipling by 63360 (inches per mile)</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-133"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-134"><span class="crayon-h"> </span><span class="crayon-c">//Now lets print our data to the serial monitor all on one line divided by commas.</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-135"><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-136"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-137"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-138"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-139"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-140"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-141"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-142"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">println</span><span class="crayon-sy">(</span><span class="crayon-v">targetDistance</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-143"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-144"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">delay</span><span class="crayon-sy">(</span><span class="crayon-cn">150</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210a0109608464-145"><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210a0109608464-146"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><div style="width: 1066px; height: 3250px; display: none;" class="crayon-placeholder"></div>
+<!-- [Format Time: 0.0264 seconds] -->
+<p>The key point to notice with this code is the print statements, summarized below:</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-56280438210b6719945663" class="crayon-syntax crayon-theme-arduino-ide crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always expand" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 22px ! important; height: auto; top: auto; left: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Arduino</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 22px ! important; z-index: 0; opacity: 0; height: 154px;">  Serial.print(rColorStrength);
+  Serial.print(" , ");
+  Serial.print(gColorStrength);
+  Serial.print(" , ");
+  Serial.print(bColorStrength);
+  Serial.print(" , ");
+  Serial.println(targetDistance);</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1;">
+				<table style="margin-left: -18px;" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 22px !important;"><div class="crayon-num" data-line="crayon-56280438210b6719945663-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210b6719945663-2">2</div><div class="crayon-num" data-line="crayon-56280438210b6719945663-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210b6719945663-4">4</div><div class="crayon-num" data-line="crayon-56280438210b6719945663-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56280438210b6719945663-6">6</div><div class="crayon-num" data-line="crayon-56280438210b6719945663-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 22px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56280438210b6719945663-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">rColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210b6719945663-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210b6719945663-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">gColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210b6719945663-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210b6719945663-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">bColorStrength</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-56280438210b6719945663-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-s">" , "</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-56280438210b6719945663-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">println</span><span class="crayon-sy">(</span><span class="crayon-v">targetDistance</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div><div style="width: 492px; height: 175px; display: none;" class="crayon-placeholder"></div>
+<!-- [Format Time: 0.0018 seconds] -->
+<p></p>
+<p style="text-align: justify;">&nbsp;Notice that we are printing 
+&nbsp;our color strengths and distance on one line separated by commas. 
+It is important to note the order of the data. When we read this in 
+Python, we will read it in as one line of text, and then we will parse 
+it into its individual values. So, we must make note and remember the 
+order the data is arranged in in this line.</p>
+<p style="text-align: justify;">Remember when you have your python 
+program reading this data, you must have your serial monitor closed. For
+ now though, run your program and look at the serial monitor to verify 
+you are getting correct data in the expected format.</p>
+<p style="text-align: justify;">In the next Lesson, LESSON 5, we will build the Python program to create a virtual world from this data.</p>
+<p class="no-break"><span st_processed="yes" class="st_facebook_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/facebook_counter.png&quot;);" class="stMainServices st-facebook-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">1</span></span></span></span></span></span>
+<span st_processed="yes" class="st_plusone_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:0px;width:75px; height:21px;">&nbsp;<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/fastbutton.htm" name="I0_1445463112379" id="I0_1445463112379" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div></div></span>
+<span st_processed="yes" class="st_digg_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span class="stButton_gradient"><span class="chicklets digg">Share</span></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_delicious_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span class="stButton_gradient"><span class="chicklets delicious">Share</span></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_email_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/email_counter.png&quot;);" class="stMainServices st-email-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_reddit_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span class="stButton_gradient"><span class="chicklets reddit">Share</span></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_slashdot_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"></span>
+<span st_processed="yes" class="st_pinterest_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/pinterest_counter.png&quot;);" class="stMainServices st-pinterest-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_fblike_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.toptechboy.com%2Farduino%2Fpython-with-arduino-lesson-4-expanding-your-virtual-world%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false" fb-xfbml-state="rendered" data-href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/" class="fb-like fb_iframe_widget" data-show-faces="false" data-layout="button_count" data-send="false" data-action=""><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe class="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/like.htm" style="border: medium none; visibility: visible; width: 78px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f17345033a3ff22" frameborder="0" height="1000px" width="1000px"></iframe></span></div></span></span>
+<span st_processed="yes" class="st_googleplus_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span class="stButton_gradient"><span class="chicklets googleplus">Share</span></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_linkedin_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/linkedin_counter.png&quot;);" class="stMainServices st-linkedin-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span>
+<span st_processed="yes" class="st_twitter_hcount" st_title="Python with Arduino LESSON 4: Expanding your Virtual World" st_url="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/twitter_counter.png&quot;);" class="stMainServices st-twitter-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span></p>	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta"><span class="tag-links"><a href="http://www.toptechboy.com/tag/arduino/" rel="tag">Arduino</a><a href="http://www.toptechboy.com/tag/color-sensor/" rel="tag">Color Sensor</a><a href="http://www.toptechboy.com/tag/echolocation/" rel="tag">Echolocation</a><a href="http://www.toptechboy.com/tag/hc-sr04/" rel="tag">HC-SR04</a><a href="http://www.toptechboy.com/tag/high-school-science/" rel="tag">High School Science</a><a href="http://www.toptechboy.com/tag/lessons/" rel="tag">Lessons</a><a href="http://www.toptechboy.com/tag/python/" rel="tag">Python</a><a href="http://www.toptechboy.com/tag/serial-port/" rel="tag">Serial Port</a><a href="http://www.toptechboy.com/tag/stem/" rel="tag">STEM</a><a href="http://www.toptechboy.com/tag/tcs230/" rel="tag">TCS230</a><a href="http://www.toptechboy.com/tag/ultrasonic-sensor/" rel="tag">Ultrasonic Sensor</a></span></footer></article><!-- #post-## -->
+	<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<a href="http://www.toptechboy.com/arduino/python-with-ardiuno-3-example-using-ultrasonic-sensor/" rel="prev"><span class="meta-nav">Previous Post</span>Python with Ardiuno LESSON 3: Simple Virtual World Using Ultrasonic Sensor</a><a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-5-finishing-our-virtual-reality-example/" rel="next"><span class="meta-nav">Next Post</span>Python with Arduino LESSON 5: Finishing our Virtual Reality Example</a>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+<div id="comments" class="comments-area">
+
+	
+	<h2 class="comments-title">
+		3 thoughts on “Python with Arduino LESSON 4: Expanding your Virtual World”	</h2>
+
+	
+	<ol class="comment-list">
+				<li id="comment-2413" class="comment even thread-even depth-1">
+			<article id="div-comment-2413" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cb2c2093ffab1546431fcbd265e0cd62.jpg" srcset="http://0.gravatar.com/avatar/cb2c2093ffab1546431fcbd265e0cd62?s=68&amp;d=mm&amp;r=g 2x" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Jim</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/#comment-2413">
+							<time datetime="2015-02-26T16:01:46+00:00">
+								February 26, 2015 at 4:01 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>May I share two things I did here:</p>
+<p>1) I don’t have that colour sensor and no compelling reason to buy 
+one (not that I really need compelling reasons to buy any of this 
+stuff).  So, I just used Arduino’s “random()” command to generate three 
+values for RG&amp;B. </p>
+<p>2) I bought a pair of Pololu Wixels a while back. (<a href="https://www.pololu.com/category/110/wixels" rel="nofollow">https://www.pololu.com/category/110/wixels</a>).
+ These  provide a wireless USB connection, just as with a mouse and the 
+usb dongle thingy. So I have a wireless remote device now, with Arduino 
+doing the serial prints of the colours through software serial and the 
+Wixel pair rather than the USB cable. I used soft serial for the Wixel 
+so I can still have the Arduino connected by USB cable for sketch 
+uploads. One Wixel is with the Arduino, listening on soft serial on pins
+ 2 and 3; the other is plugged into my laptop just like a mouse dongle. 
+Laptop saw that Wixel as com13, so just had to change the Python code to
+ talk on that port not the Arduino one. </p>
+<p>The Wixel on the Arduino talks wirelessly to its buddy which is on 
+the laptop. Pololu claim the Wixels can talk over 50′ (~15m) indoors.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/?replytocom=2413#respond" onclick='return addComment.moveForm( "div-comment-2413", "2413", "respond", "289" )' aria-label="Reply to Jim">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-2414" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-2414" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cb2c2093ffab1546431fcbd265e0cd62.jpg" srcset="http://0.gravatar.com/avatar/cb2c2093ffab1546431fcbd265e0cd62?s=68&amp;d=mm&amp;r=g 2x" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Jim</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/#comment-2414">
+							<time datetime="2015-02-26T16:33:26+00:00">
+								February 26, 2015 at 4:33 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Oops, PS to my above:</p>
+<p>I forgot to say that the Wixels’ IO is 3.3V not 5V, although the Wixel itself runs off 3-6V.</p>
+<p>I use a Uno, which is a 5V machine.</p>
+<p>So, when you send down the wireless USB to the remote Wixel, it talks 3.3V to the Arduino’s Rx. Arduino seems happy with that.</p>
+<p>BUT when the Arduino talks back, it Tx’s to the Wixel’s Rx at 5V 
+which is ungood for the Wixel. But it’s easy to jig a 1K/2K divider to 
+drop that to 3.3V for the Wixel. Page 25 of the Wixel pdf shows how to 
+set that up; it’s dead simple but don’t forget to do it…..</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/?replytocom=2414#respond" onclick='return addComment.moveForm( "div-comment-2414", "2414", "respond", "289" )' aria-label="Reply to Jim">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-2447" class="comment even thread-even depth-1">
+			<article id="div-comment-2447" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/cb2c2093ffab1546431fcbd265e0cd62.jpg" srcset="http://0.gravatar.com/avatar/cb2c2093ffab1546431fcbd265e0cd62?s=68&amp;d=mm&amp;r=g 2x" class="avatar avatar-34 photo" height="34" width="34">						<b class="fn">Jim</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/#comment-2447">
+							<time datetime="2015-03-02T15:16:13+00:00">
+								March 2, 2015 at 3:16 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>And my last note on this one!</p>
+<p>I decided to make the ultrasonic sensor move rather than have the 
+target move, so mounted the sensor on the front of a robot chassis.</p>
+<p>Code in Arduino kills the motors when the distance is too small as 
+the robot approaches the wall. My graphic is thus the stationary wall 
+(rendered in that fancy brickwork material in Vp), with a cube to mimic 
+the robot approaching the wall.</p>
+<p>Great fun this, thanks again for the tutorials…</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/?replytocom=2447#respond" onclick='return addComment.moveForm( "div-comment-2447", "2447", "respond", "289" )' aria-label="Reply to Jim">Reply</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+	</ol><!-- .comment-list -->
+
+	
+	
+	
+							<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.toptechboy.com/arduino/python-with-arduino-lesson-4-expanding-your-virtual-world/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.toptechboy.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																			<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" aria-required="true" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" aria-describedby="email-notes" aria-required="true" required="required" type="email"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" type="url"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea></p>						
+						<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="289" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="d7d51b4d2e" type="hidden"></p><p style="display: none;"></p>					<input id="ak_js" name="ak_js" value="1445463106689" type="hidden"></form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
+	<aside id="text-5" class="widget widget_text">			<div class="textwidget"><script async="" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/adsbygoogle.js"></script>
+<!-- TopTechTopRight -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-0597607016984461" data-ad-slot="6786076898" data-ad-format="auto"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:253px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:253px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="253"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside>		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="http://www.toptechboy.com/uncategorized/2015-2016-space-cowboys/">2015-2016 Space Cowboys</a>
+							<span class="post-date">October 17, 2015</span>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/uncategorized/865/">Steaming Up the Nile</a>
+							<span class="post-date">July 24, 2015</span>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/unmanned-aerial-drones/review-of-the-3dr-x8-unmanned-aerial-drone-multicopter/">Review of the 3DR X8+ Unmanned Aerial Drone Multicopter</a>
+							<span class="post-date">July 1, 2015</span>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/beaglevone-black-rev-c/beaglebone-black-gps-tracker-lesson-5-displaying-data-from-gps-in-google-earth/">Beaglebone Black GPS Tracker LESSON 5: Displaying Data from GPS in Google Earth</a>
+							<span class="post-date">June 23, 2015</span>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/tutorial/beaglebone-black-gps-tracker-lesson-4-easily-transfer-files-between-beaglebone-and-pc/">Beaglebone Black GPS Tracker LESSON 4: Easily Transfer Files Between Beaglebone and PC</a>
+							<span class="post-date">June 16, 2015</span>
+						</li>
+				</ul>
+		</aside><aside id="text-8" class="widget widget_text">			<div class="textwidget"><script type="text/javascript" language="javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/getads.js"></script>
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+aax_getad_mpb({
+  "slot_uuid":"59b22d05-7940-4994-acd0-9cfea2923da9"
+});
+//]]>
+</script><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/getad"></script><iframe src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/q.htm" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" height="250" width="300"></iframe>
+</div>
+		</aside></div><!-- #content-sidebar -->
+<div id="secondary">
+		<h2 class="site-description">Making The World a Better Place One High Tech Project at a Time. Enjoy!</h2>
+	
+	
+		<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<aside id="text-3" class="widget widget_text">			<div class="textwidget"><style type="text/css">
+@import url(//www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#000000;color:#FFFFFF">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com" id="cse-search-box">
+      <div>
+        <input name="cx" value="partner-pub-0597607016984461:5487816094" type="hidden">
+        <input name="ie" value="UTF-8" type="hidden">
+        <input name="q" size="15" type="text">
+        <input name="sa" value="Search" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/poweredby_000000.gif" alt="Google">
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+</div>
+		</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="http://www.toptechboy.com/uncategorized/2015-2016-space-cowboys/">2015-2016 Space Cowboys</a>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/uncategorized/865/">Steaming Up the Nile</a>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/unmanned-aerial-drones/review-of-the-3dr-x8-unmanned-aerial-drone-multicopter/">Review of the 3DR X8+ Unmanned Aerial Drone Multicopter</a>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/beaglevone-black-rev-c/beaglebone-black-gps-tracker-lesson-5-displaying-data-from-gps-in-google-earth/">Beaglebone Black GPS Tracker LESSON 5: Displaying Data from GPS in Google Earth</a>
+						</li>
+					<li>
+				<a href="http://www.toptechboy.com/tutorial/beaglebone-black-gps-tracker-lesson-4-easily-transfer-files-between-beaglebone-and-pc/">Beaglebone Black GPS Tracker LESSON 4: Easily Transfer Files Between Beaglebone and PC</a>
+						</li>
+				</ul>
+		</aside><aside id="text-9" class="widget widget_text"><h1 class="widget-title">Like my Teaching? Let me teach you the Bible.</h1>			<div class="textwidget"><p style="margin-top: 0; margin-bottom: 8px" align="center">
+<a href="http://www.thebibleboy.com/">
+<img src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/african-orphan.jpg" alt="[Paul McWhorter]" border="0" width="200"></a></p>
+
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<a href="http://www.thebibleboy.com/" style="text-decoration: none; font-weight: 700">
+Click Here for My Bible Study Blog</a></p></div>
+		</aside><aside id="archives-3" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+	<li><a href="http://www.toptechboy.com/2015/10/">October 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2015/07/">July 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2015/06/">June 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2015/05/">May 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2015/04/">April 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2015/03/">March 2015</a></li>
+	<li><a href="http://www.toptechboy.com/2014/08/">August 2014</a></li>
+	<li><a href="http://www.toptechboy.com/2014/07/">July 2014</a></li>
+	<li><a href="http://www.toptechboy.com/2014/06/">June 2014</a></li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h1 class="widget-title">Tags</h1><div class="tagcloud"><a href="http://www.toptechboy.com/tag/adafruit-ultimate-gps/" class="tag-link-58" title="7 topics" style="font-size: 12.6299212598pt;">Adafruit Ultimate GPS</a>
+<a href="http://www.toptechboy.com/tag/analogwrite/" class="tag-link-28" title="2 topics" style="font-size: 8pt;">analogWrite</a>
+<a href="http://www.toptechboy.com/tag/arduino/" class="tag-link-141" title="13 topics" style="font-size: 15.3858267717pt;">Arduino</a>
+<a href="http://www.toptechboy.com/tag/beaglebone-black/" class="tag-link-121" title="17 topics" style="font-size: 16.5984251969pt;">Beaglebone Black</a>
+<a href="http://www.toptechboy.com/tag/bmp180/" class="tag-link-53" title="6 topics" style="font-size: 12.0787401575pt;">BMP180</a>
+<a href="http://www.toptechboy.com/tag/bread-board/" class="tag-link-19" title="2 topics" style="font-size: 8pt;">Bread board</a>
+<a href="http://www.toptechboy.com/tag/color-sensor/" class="tag-link-34" title="4 topics" style="font-size: 10.4251968504pt;">Color Sensor</a>
+<a href="http://www.toptechboy.com/tag/command-line/" class="tag-link-82" title="2 topics" style="font-size: 8pt;">Command Line</a>
+<a href="http://www.toptechboy.com/tag/echolocation/" class="tag-link-38" title="5 topics" style="font-size: 11.3070866142pt;">Echolocation</a>
+<a href="http://www.toptechboy.com/tag/edge-of-space/" class="tag-link-5" title="4 topics" style="font-size: 10.4251968504pt;">Edge of Space</a>
+<a href="http://www.toptechboy.com/tag/ethernet/" class="tag-link-69" title="2 topics" style="font-size: 8pt;">Ethernet</a>
+<a href="http://www.toptechboy.com/tag/geocaching/" class="tag-link-59" title="5 topics" style="font-size: 11.3070866142pt;">Geocaching</a>
+<a href="http://www.toptechboy.com/tag/google-earth/" class="tag-link-61" title="4 topics" style="font-size: 10.4251968504pt;">Google Earth</a>
+<a href="http://www.toptechboy.com/tag/gpio/" class="tag-link-111" title="9 topics" style="font-size: 13.7322834646pt;">GPIO</a>
+<a href="http://www.toptechboy.com/tag/gps/" class="tag-link-56" title="8 topics" style="font-size: 13.1811023622pt;">GPS</a>
+<a href="http://www.toptechboy.com/tag/graphical-user-interface/" class="tag-link-117" title="4 topics" style="font-size: 10.4251968504pt;">Graphical User Interface</a>
+<a href="http://www.toptechboy.com/tag/graphing/" class="tag-link-49" title="2 topics" style="font-size: 8pt;">Graphing</a>
+<a href="http://www.toptechboy.com/tag/hc-sr04/" class="tag-link-44" title="5 topics" style="font-size: 11.3070866142pt;">HC-SR04</a>
+<a href="http://www.toptechboy.com/tag/high-school-science/" class="tag-link-8" title="47 topics" style="font-size: 21.2283464567pt;">High School Science</a>
+<a href="http://www.toptechboy.com/tag/lcd-display/" class="tag-link-40" title="2 topics" style="font-size: 8pt;">LCD Display</a>
+<a href="http://www.toptechboy.com/tag/led/" class="tag-link-17" title="8 topics" style="font-size: 13.1811023622pt;">LED</a>
+<a href="http://www.toptechboy.com/tag/lessons/" class="tag-link-16" title="41 topics" style="font-size: 20.5669291339pt;">Lessons</a>
+<a href="http://www.toptechboy.com/tag/linux/" class="tag-link-74" title="26 topics" style="font-size: 18.4724409449pt;">Linux</a>
+<a href="http://www.toptechboy.com/tag/matplotlib/" class="tag-link-48" title="3 topics" style="font-size: 9.32283464567pt;">Matplotlib</a>
+<a href="http://www.toptechboy.com/tag/nmea/" class="tag-link-60" title="2 topics" style="font-size: 8pt;">NMEA</a>
+<a href="http://www.toptechboy.com/tag/parsing-nmea-sentences/" class="tag-link-62" title="2 topics" style="font-size: 8pt;">Parsing NMEA Sentences</a>
+<a href="http://www.toptechboy.com/tag/potentiometers/" class="tag-link-30" title="4 topics" style="font-size: 10.4251968504pt;">Potentiometers</a>
+<a href="http://www.toptechboy.com/tag/pressure/" class="tag-link-50" title="5 topics" style="font-size: 11.3070866142pt;">Pressure</a>
+<a href="http://www.toptechboy.com/tag/prototyping-board/" class="tag-link-18" title="2 topics" style="font-size: 8pt;">Prototyping Board</a>
+<a href="http://www.toptechboy.com/tag/push-buttons/" class="tag-link-115" title="5 topics" style="font-size: 11.3070866142pt;">Push Buttons</a>
+<a href="http://www.toptechboy.com/tag/pwm/" class="tag-link-112" title="6 topics" style="font-size: 12.0787401575pt;">PWM</a>
+<a href="http://www.toptechboy.com/tag/python/" class="tag-link-42" title="34 topics" style="font-size: 19.6850393701pt;">Python</a>
+<a href="http://www.toptechboy.com/tag/raspberry-pi/" class="tag-link-73" title="38 topics" style="font-size: 20.2362204724pt;">Raspberry Pi</a>
+<a href="http://www.toptechboy.com/tag/rgb-led/" class="tag-link-31" title="3 topics" style="font-size: 9.32283464567pt;">RGB LED</a>
+<a href="http://www.toptechboy.com/tag/serial-port/" class="tag-link-26" title="3 topics" style="font-size: 9.32283464567pt;">Serial Port</a>
+<a href="http://www.toptechboy.com/tag/servo/" class="tag-link-35" title="4 topics" style="font-size: 10.4251968504pt;">Servo</a>
+<a href="http://www.toptechboy.com/tag/stem/" class="tag-link-7" title="55 topics" style="font-size: 22pt;">STEM</a>
+<a href="http://www.toptechboy.com/tag/step-by-step/" class="tag-link-57" title="2 topics" style="font-size: 8pt;">step-by-step</a>
+<a href="http://www.toptechboy.com/tag/tcs230/" class="tag-link-45" title="2 topics" style="font-size: 8pt;">TCS230</a>
+<a href="http://www.toptechboy.com/tag/terminal-window/" class="tag-link-83" title="2 topics" style="font-size: 8pt;">Terminal Window</a>
+<a href="http://www.toptechboy.com/tag/tutorial/" class="tag-link-142" title="44 topics" style="font-size: 20.8976377953pt;">Tutorial</a>
+<a href="http://www.toptechboy.com/tag/ultrasonic-sensor/" class="tag-link-37" title="7 topics" style="font-size: 12.6299212598pt;">Ultrasonic Sensor</a>
+<a href="http://www.toptechboy.com/tag/video/" class="tag-link-6" title="3 topics" style="font-size: 9.32283464567pt;">Video</a>
+<a href="http://www.toptechboy.com/tag/virtual-reality/" class="tag-link-43" title="2 topics" style="font-size: 8pt;">Virtual Reality</a>
+<a href="http://www.toptechboy.com/tag/xbee/" class="tag-link-67" title="2 topics" style="font-size: 8pt;">Xbee</a></div>
+</aside><aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Topics on this Blog</h1><label class="screen-reader-text" for="cat">Topics on this Blog</label><select name="cat" id="cat" class="postform">
+	<option selected="selected" value="-1">Select Category</option>
+	<option class="level-0" value="14">Arduino&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="41">Arduino with Python&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="122">Beaglevone Black Rev. C&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="22">Raspberry Pi&nbsp;&nbsp;(38)</option>
+	<option class="level-0" value="15">Tutorial&nbsp;&nbsp;(50)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="136">Unmanned Aerial Drones&nbsp;&nbsp;(1)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "http://www.toptechboy.com/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</aside><aside id="text-2" class="widget widget_text">			<div class="textwidget"><p>Site Copyright 2014 www.toptechboy.com. Send comments to paul.mcwhorter@gmail.com</p>
+<p>Disclosure of Material Connection: Some of the textual links in the 
+page above may be "affiliate links.” This means if you visit the link 
+and purchase the item, I will receive an affiliate commission. 
+Regardless, I only recommend products or services I use personally and 
+believe will add value to my readers. I am disclosing this in accordance
+ with the Federal Trade Commission’s 16 CFR, Part 255: “Guides 
+Concerning the Use of Endorsements and Testimonials in Advertising.</p>
+</div>
+		</aside><aside id="meta-3" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="http://www.toptechboy.com/wp-login.php">Log in</a></li>
+			<li><a href="http://www.toptechboy.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.toptechboy.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+</aside>	</div><!-- #primary-sidebar -->
+	</div><!-- #secondary -->
+
+		</div><!-- #main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			
+			<div class="site-info">
+								<a href="http://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	    <!-- Start of StatCounter Code -->
+    <script>
+    <!-- 
+        var sc_project=9882655; 
+        var sc_security="e3776a01"; 
+      var sc_invisible=1;
+        var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+    //-->
+document.write("<sc"+"ript src='" +scJsHost +"statcounter.com/counter/counter.js'></"+"script>");
+</script><script src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/counter.js"></script>
+<noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/"><img class="statcounter" src="https://c.statcounter.com/9882655/0/e3776a01/1/" alt="web analytics" /></a></div></noscript>   
+    <!-- End of StatCounter Code -->
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/form.js"></script>
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/comment-reply.js"></script>
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/functions.js"></script>
+<script type="text/javascript" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/wp-gallery-custom-links.js"></script>
+
+
+<!-- Powered by Whitelist IP For Limit Login Attempts | URL: http://club.orbisius.com/products/wordpress-plugins/whitelist-ip-for-limit-login-attempts/ -->
+
+
+<div style="position: absolute; top: -1999px; left: -1988px;" id="stcpDiv">ShareThis Copy and Paste</div><iframe style="display:none;" scrolling="no" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/getSegment.htm" name="stSegmentFrame" id="stSegmentFrame" frameborder="0" height="0px" width="0px"></iframe><div style="display: none;" class="stwrapper stwrapper5x" id="stwrapper"><iframe src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/index.htm" scrolling="no" name="stLframe" class="stLframe" id="stLframe" allowtransparency="true" frameborder="0"></iframe></div><div onclick="javascript:stWidget.closeWidget();" id="stOverlay"></div><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/jb3BUxkAISL.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/jb3BUxkAISL_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Python%20with%20Arduino%20LESSON%204%20%20Expanding%20your%20Virtual%20World%20_%20Technology%20Tutorials_files/postmessageRelay.htm" id="oauth2relay823185099" name="oauth2relay823185099"></iframe></body></html>
